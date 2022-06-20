@@ -1,0 +1,15 @@
+/* cart widget */
+.containerCartWidget{
+    display: flex;
+    align-items: center;
+}
+.cartWidget{
+    color: aliceblue;
+}
+.cartWidget-p{
+    color: aliceblue;
+    margin-bottom: 0;
+}
+
+
+/* ItemContador */
