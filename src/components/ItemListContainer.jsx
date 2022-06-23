@@ -15,8 +15,6 @@ export const ItemListContainer = () => {
   }
   return (
     <Container>
-        <h1 className='t-center'>Gifs mas populares</h1>
-
         <form 
         onSubmit={handleSubmit}
         >
@@ -30,8 +28,6 @@ export const ItemListContainer = () => {
             
         />
         </form>
-    
-        {/* <BuscadorGifs/> */}
         <ItemList className='itemList' buscarGif = {buscarGif}/>
     </Container>
   )

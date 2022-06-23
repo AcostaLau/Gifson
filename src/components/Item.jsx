@@ -1,11 +1,18 @@
-import React from 'react'
-import { Card } from 'react-bootstrap'
+import React, { useEffect, useState } from 'react'
+import { Card, Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { ItemContador } from './ItemContador'
-
+import { Spiner } from './Spiner'
 export const Item = ({gifs}) => {
-  console.log(gifs)
-    
+  const [mostrar, setMostrar] = useState(false)
+  // useEffect realizado para darle tiempo a la api para que me traiga las imagenes
+  useEffect(() => {
+    setTimeout(() => {
+      setMostrar(true)
+    }, 3000);
+  }, [])
+
   return (
             <>
               {
@@ -13,10 +20,12 @@ export const Item = ({gifs}) => {
                   return(
                   <ContainerCards>
                       <Card style={{ width: '18rem' }}>
-                      <Card.Img variant="top" src={e.url}/>
+                        {
+                          mostrar ? <Card.Img variant="top" src={e.url}/> : <Spiner/>
+                        }
                       <Card.Body key={e.id}>
                         <Card.Title>{e.title}</Card.Title>
-                          <ItemContador stock ={10} initial = {1}/>
+                          <Link to={`/detalle/${e.id}`}><Button>Ver mas</Button></Link>
                       </Card.Body>
                     </Card>
                   </ContainerCards>

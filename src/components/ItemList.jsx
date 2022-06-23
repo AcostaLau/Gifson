@@ -3,6 +3,7 @@ import getGifs from '../API/getGifs'
 import { Item } from './Item'
 import '../style.css'
 import styled from 'styled-components'
+import { Spiner } from './Spiner'
 
 export const ItemList = ({buscarGif}) => {
     const [gifs, setGifs] = useState([])
@@ -14,7 +15,8 @@ export const ItemList = ({buscarGif}) => {
     }, [buscarGif])
     return (
     <DivItemContainer>
-        <Item className='item' gifs = {gifs}/>
+        {gifs.length ? <Item className='item' gifs = {gifs}/> : `Ingrese el nombre del gif que desea buscar`}
+        
     </DivItemContainer>
   )
 }

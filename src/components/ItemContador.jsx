@@ -6,7 +6,7 @@ import { Cartel } from './Cartel'
 
 
 
-export const ItemContador = ({stock, initial}) => {
+export const ItemContador = ({stock, initial, titulo}) => {
     const [cantItem, setCantItem] = useState(initial)
     const [mostrar, setMostrar] = useState(false)
 
@@ -58,7 +58,7 @@ export const ItemContador = ({stock, initial}) => {
                 <Button className='text-center' variant="primary" onClick={addToCart}>Add to cart</Button>
             </DivContainerAddToCart>
 
-            <Cartel show={show} handleClose={handleClose} cantItem = {cantItem} mostrar = {mostrar} />
+            <Cartel show={show} handleClose={handleClose} cantItem = {cantItem} mostrar = {mostrar} titulo={titulo}/>
         </div>
   )
 }
