@@ -11,7 +11,8 @@ export const NavBar = () => {
         <Container>
           <Navbar.Brand >GIFSON</Navbar.Brand>
           <Nav className='navbar-display-flex-items'>
-            <Link className='navBar-hijos' to='/'>Buscar gifs</Link>
+            <Link className='navBar-hijos' to='/' >Home</Link>
+            <Link className='navBar-hijos' to='/buscar-gifs'>Buscar gifs</Link>
             <Link className='navBar-hijos' to='/trending'>Trendings</Link>
           </Nav>
         </Container>

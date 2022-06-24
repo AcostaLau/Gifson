@@ -13,10 +13,11 @@ export const TrendingGifs = () => {
       }, [])
     return (
     <div>
+      <h1>Trending gifs</h1>
         {
             trend.map((e) => {
                 return(
-                    <ContainerCards>
+                    <ContainerCards key={e.id}>
                       <Card style={{ width: '25rem', height: '30rem'}}>
                         <Card.Img className='tamanoImagenCard' variant="top" src={e.url}/>
                         <Card.Body className='cuerpoCard' key={e.id}>

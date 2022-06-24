@@ -2,7 +2,7 @@
 const apiKey = '1nt0v67QMGFyuSwK78jqqDQQg6ATbZpO'
 
 export default function getTrendingGifs(){
-    const API = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=5&rating=g`
+    const API = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=10&rating=g`
 
         //actualizo gifs
         //accedo a la api

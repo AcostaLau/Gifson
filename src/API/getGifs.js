@@ -1,7 +1,7 @@
 
 const apiKey = '1nt0v67QMGFyuSwK78jqqDQQg6ATbZpO'
 
-export default function getGifs({buscarApi = 'messi'} = {}){
+export default function getGifs({buscarApi}){
     const API = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${buscarApi}&limit=10&offset=0&rating=g&lang=en`
 
         //actualizo gifs
