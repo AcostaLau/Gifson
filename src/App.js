@@ -1,22 +1,18 @@
 
 import { Routes, Route } from 'react-router-dom';
-import { Cart } from './components/Cart';
-import { Error404 } from './components/Error404';
-import { ItemDetailContainer } from './components/ItemDetailContainer';
+import { Header } from './components/Header';
 import { ItemListContainer } from './components/ItemListContainer';
-import { NavBar} from './components/Navbar';
+import { TrendingGifs } from './components/TrendingGifs';
 import './style.css'
 
 
 function App() {
   return (
     <>
-        <NavBar/>
+        <Header/>
         <Routes>
-          <Route path='*' element={<Error404/>}/>
+          <Route exact path='/trending' element={<TrendingGifs/>}/>
           <Route exact path='/' element={ <ItemListContainer/>}/> 
-          <Route exact path='/detalle/:idDetail' element={<ItemDetailContainer/>}></Route>
-          <Route exact path='/cart' element={<Cart/>}></Route>
         </Routes>
     
     </>

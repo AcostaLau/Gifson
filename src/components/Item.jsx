@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { Card, Button } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Card } from 'react-bootstrap'
 import styled from 'styled-components'
-import { ItemContador } from './ItemContador'
+import { GifDetail } from './GifDetail'
 import { Spiner } from './Spiner'
+import '../style.css'
 export const Item = ({gifs}) => {
   const [mostrar, setMostrar] = useState(false)
   // useEffect realizado para darle tiempo a la api para que me traiga las imagenes
@@ -19,15 +19,15 @@ export const Item = ({gifs}) => {
                 gifs.map((e) => {
                   return(
                   <ContainerCards>
-                      <Card style={{ width: '18rem' }}>
+                      <Card style={{ width: '25rem', height: '30rem'}}>
                         {
-                          mostrar ? <Card.Img variant="top" src={e.url}/> : <Spiner/>
+                          mostrar ? <Card.Img className='tamanoImagenCard' variant="top" src={e.url}/> : <Spiner/>
                         }
-                      <Card.Body key={e.id}>
-                        <Card.Title>{e.title}</Card.Title>
-                          <Link to={`/detalle/${e.id}`}><Button>Ver mas</Button></Link>
-                      </Card.Body>
-                    </Card>
+                        <Card.Body className='cuerpoCard' key={e.id}>
+                          <Card.Title>{e.title}</Card.Title>
+                          <GifDetail imagen={e.url} titulo ={e.title}/>
+                        </Card.Body>
+                      </Card>
                   </ContainerCards>
                     
         
@@ -40,5 +40,5 @@ export const Item = ({gifs}) => {
 }
 
 const ContainerCards = styled.div`
-  margin: 30px;
+  margin: 5rem;
 `

@@ -1,8 +1,8 @@
 
 const apiKey = '1nt0v67QMGFyuSwK78jqqDQQg6ATbZpO'
 
-export default function getGifs({buscarApi = 'messi'} = {}){
-    const API = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${buscarApi}&limit=10&offset=0&rating=g&lang=en`
+export default function getTrendingGifs(){
+    const API = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=5&rating=g`
 
         //actualizo gifs
         //accedo a la api
@@ -20,7 +20,7 @@ export default function getGifs({buscarApi = 'messi'} = {}){
                 }
                     
                     )
-                return gif
+                return gif  
             })
             .catch(rej => rej(console.log('404 error')))
 

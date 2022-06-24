@@ -3,7 +3,7 @@ import getGifs from '../API/getGifs'
 import { Item } from './Item'
 import '../style.css'
 import styled from 'styled-components'
-import { Spiner } from './Spiner'
+
 
 export const ItemList = ({buscarGif}) => {
     const [gifs, setGifs] = useState([])

@@ -2,10 +2,11 @@ import React, {useState} from 'react'
 import { Container } from 'react-bootstrap'
 import { ItemList } from './ItemList'
 import '../style.css'
-// import {BuscadorGifs} from './BuscadorGifs'
+import styled from 'styled-components'
+
 export const ItemListContainer = () => {
 
-  const [buscarGif, setBuscarGif] = useState('star wars')
+  const [buscarGif, setBuscarGif] = useState('')
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -15,20 +16,28 @@ export const ItemListContainer = () => {
   }
   return (
     <Container>
-        <form 
+        <FormContainer
         onSubmit={handleSubmit}
         >
-        <label>Busca el gif que quieras: </label>
+        <h1 className='text-center'>Busca el gif que quieras: </h1>
         <input 
             type="text" 
             id="buscarGif" 
             value={buscarGif}
             //capturamos el valor del nuevo gif que busca el usuario
             onChange={handleChange}
+            className='text-center'
             
         />
-        </form>
+        </FormContainer>
         <ItemList className='itemList' buscarGif = {buscarGif}/>
     </Container>
   )
 }
+
+const FormContainer = styled.form`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+`
