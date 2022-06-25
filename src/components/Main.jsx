@@ -24,7 +24,7 @@ export const Main = () => {
 }
 const HeaderContainer = styled.div`
     background-color:#2a2f33;
-    height: 92.9vh;
+    height: 100vh;
 `
 const HeaderContainerElements = styled.div`
     display: flex;

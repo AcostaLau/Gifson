@@ -14,7 +14,7 @@ export const Item = ({gifs}) => {
   }, [])
 
   return (
-            <>
+            <DivItemContainer>
               {
                 gifs.map((e) => {
                   return(
@@ -34,11 +34,17 @@ export const Item = ({gifs}) => {
                   )
                 })
               }
-            </>
+            </DivItemContainer>
     
   )
 }
 
 const ContainerCards = styled.div`
   margin: 5rem;
+`
+const DivItemContainer = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 `

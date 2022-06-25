@@ -15,7 +15,8 @@ export const ItemListContainer = () => {
     setBuscarGif(e.target.value)
   }
   return (
-    <Container>
+
+      <Container>
         <FormContainer
         onSubmit={handleSubmit}
         >
@@ -34,7 +35,9 @@ export const ItemListContainer = () => {
         
         </FormContainer>
         <ItemList className='itemList' buscarGif = {buscarGif}/>
-    </Container>
+      </Container>
+
+    
   )
 }
 const FormContainer = styled.form`

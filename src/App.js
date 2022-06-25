@@ -3,8 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import { Main } from './components/Main';
 import { ItemListContainer } from './components/ItemListContainer';
 import { TrendingGifs } from './components/TrendingGifs';
-import './style.css'
 import {NavBar} from './components/Navbar'
+import './style.css'
 
 function App() {
   return (
