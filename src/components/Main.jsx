@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Container } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 import styled from 'styled-components'
 import '../style.css'
 import { Link } from 'react-router-dom'
