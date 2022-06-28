@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { Card } from 'react-bootstrap'
+import { Card, Col, Row } from 'react-bootstrap'
 import styled from 'styled-components'
 import { GifDetail } from './GifDetail'
 import { Spiner } from './Spiner'
 import '../style.css'
+
 export const Item = ({gifs}) => {
   const [mostrar, setMostrar] = useState(false)
   // useEffect realizado para darle tiempo a la api para que me traiga las imagenes
@@ -15,10 +16,12 @@ export const Item = ({gifs}) => {
 
   return (
             <DivItemContainer>
+              <Row>
               {
                 gifs.map((e) => {
                   return(
-                  <ContainerCards>
+                    <Col sm={12} md={4} xl={4}>
+                     <ContainerCards>
                       <Card style={{ width: '25rem', height: '30rem'}}>
                         {
                           mostrar ? <Card.Img className='tamanoImagenCard' variant="top" src={e.url}/> : <Spiner/>
@@ -29,18 +32,22 @@ export const Item = ({gifs}) => {
                         </Card.Body>
                       </Card>
                   </ContainerCards>
+                    </Col>
+                 
                     
         
                   )
                 })
               }
+              </Row>
+              
             </DivItemContainer>
     
   )
 }
 
 const ContainerCards = styled.div`
-  margin: 5rem;
+  margin: 5rem 0;
 `
 const DivItemContainer = styled.div`
     display: flex;
