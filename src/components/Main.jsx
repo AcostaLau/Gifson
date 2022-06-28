@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container } from 'react-bootstrap'
+import { Col, Container, Row } from 'react-bootstrap'
 import styled from 'styled-components'
 import '../style.css'
 import { Link } from 'react-router-dom'
@@ -10,12 +10,21 @@ export const Main = () => {
     <HeaderContainer id='home'>
         <Container>
             <HeaderContainerElements>
-                <ContainerTituloParrafo>
-                    <H1Header>La mejor App para que puedas encontrar tus gifs preferidos</H1Header>
-                    <ParrafoHeader>Hace click para iniciar!</ParrafoHeader>
-                    <Link to='/buscar-gifs'><button className='botonEmpezar'>Empezar</button></Link>
-                </ContainerTituloParrafo>
-                <ImgMain className='imgMain' src="https://i.imgur.com/KDUSxvL.gif" alt="happy boy" />
+                <Row>
+                    <Col sm={12} md={8} xl={8}>
+                        <ContainerTituloParrafo className=''>
+                            <H1Header>La mejor App para que puedas encontrar tus gifs preferidos</H1Header>
+                            <ParrafoHeader>Hace click para iniciar!</ParrafoHeader>
+                            <Link to='/buscar-gifs'><button className='botonEmpezar'>Empezar</button></Link>
+                        </ContainerTituloParrafo>                    
+                    </Col>
+                    <Col sm={12} md={4} xl={4}>
+                        <ImgMain className='imgMain' src="https://i.imgur.com/KDUSxvL.gif" alt="happy boy" />
+                    </Col>
+                    
+                    
+                </Row>
+                
             </HeaderContainerElements>
             
         </Container>
@@ -34,7 +43,6 @@ const HeaderContainerElements = styled.div`
     height: 80vh;
 `
 const ContainerTituloParrafo = styled.div`
-    width: 40rem;
     padding: 2rem;
 `
 const H1Header = styled.h1`
