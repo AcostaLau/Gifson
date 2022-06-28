@@ -6,6 +6,7 @@ import { TrendingGifs } from './components/TrendingGifs';
 import {NavBar} from './components/Navbar'
 import './style.css'
 
+
 function App() {
   return (
     <>
